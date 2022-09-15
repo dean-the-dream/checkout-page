@@ -1,10 +1,17 @@
 const plus = document.querySelectorAll(".plus")
 const minus = document.querySelectorAll(".minus")
 const productList = document.querySelector(".products")
+let priceList = document.querySelectorAll("strong")
 let productTotals = document.querySelectorAll(".product-line-price")
-let sub = document.querySelector("#cart-subtotal p + p")
+let sub = document.querySelector("#cart-subtotal").firstElementChild.nextElementSibling;
 let shipping = document.querySelector("#cart-shipping").firstElementChild.nextElementSibling;
 let tax = document.querySelector("#cart-tax").firstElementChild.nextElementSibling;
+changeSubtotal();
+changeTax();
+changeShipping();
+changeTotal();
+
+
 
 function changeQuantity (e) {
     if((e.target.className == "plus")){
